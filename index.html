@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./bootstrap-5.1.3-dist/css/bootstrap.min.css">
     <title>Trabalho de Matemática</title>
-    
+
     <!--link rel="stylesheet" href="style.css"-->
-    
+
 </head>
 
 <body>
@@ -17,7 +17,8 @@
     <nav class="navbar navbar-light bg-light">
         <span class="navbar-brand mb-0 h1">Matemática Computacional</span>
     </nav>
-    <button type="button" class="btn btn-warning btn-lg mt-2 ml-2" data-toggle="modal" data-target="#instrucoes">Instruções</button><br><br>
+    <button type="button" class="btn btn-warning btn-lg mt-2 ml-2" data-toggle="modal"
+        data-target="#instrucoes">Instruções</button><br><br>
     <!-- Botão que irá abrir o modal -->
     <button type="button" class="btn btn-success btn-lg mt-2 ml-2" data-toggle="modal" data-target="#m2">Matriz
         2x2</button>
@@ -41,31 +42,31 @@
     <!-- Modal -->
     <div id="instrucoes" class="modal" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title">Instruções</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-                <span aria-hidden="true">&times;</span>
-              </button>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Instruções</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Para calcular devemos inserir apenas os numeros do sistema, conforme e demostrado abaixo.</p>
+                    <img src="sistema.png"><br>
+                    <img src="sistema-matriz.png" style="width: 450px; height:250px;">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                </div>
             </div>
-            <div class="modal-body">
-              <p>Para calcular devemos inserir apenas os numeros do sistema, conforme e demostrado abaixo.</p>
-              <img src="sistema.png"><br>
-              <img src="sistema-matriz.png" style="width: 450px; height:250px;">
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-            </div>
-          </div>
         </div>
-      </div>
+    </div>
     <div id="m2" class="modal fade" role="dialog">
-        <div class="modal-dialog "style="max-width: 100%; width: auto; display: table;">
+        <div class="modal-dialog " style="max-width: 100%; width: auto; display: table;">
 
             <!-- Modal da matriz 2x2 -->
             <!-- Conteúdo do modal-->
             <div class="modal-content">
-
+                <p id="resultado"></p>
                 <!-- Cabeçalho do modal -->
                 <div class="modal-header">
                     <h4 class="modal-title">Matriz 2x2</h4>
@@ -77,28 +78,28 @@
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-4">
-                                <input id="a11" type="text" class="form-control" placeholder="a11"><br>
+                                <input id="M2a11" type="text" class="form-control" placeholder="a11"><br>
                             </div>
                             <div class="col-md-4">
-                                <input id="a12"type="text" class="form-control" placeholder="a12"><br>
+                                <input id="M2a12" type="text" class="form-control" placeholder="a12"><br>
                             </div>
                             =
                             <div class="col-md-2">
-                                <input id="t1" type="text" class="form-control" placeholder="TI"><br>
+                                <input id="M2t1" type="text" class="form-control" placeholder="TI"><br>
                             </div>
                         </div>
                     </div>
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-4">
-                                <input id="a21" type="text" class="form-control" placeholder="a21"><br>
+                                <input id="M2a21" type="text" class="form-control" placeholder="a21"><br>
                             </div>
                             <div class="col-md-4">
-                                <input id="a22"type="text" class="form-control" placeholder="a22"><br>
+                                <input id="M2a22" type="text" class="form-control" placeholder="a22"><br>
                             </div>
                             =
                             <div class="col-md-2">
-                                <input id="t2" type="text" class="form-control" placeholder="TI"><br>
+                                <input id="M2t2" type="text" class="form-control" placeholder="TI"><br>
                             </div>
                         </div>
                     </div>
@@ -106,7 +107,8 @@
                     <!-- Rodapé do modal-->
                     <div class="modal-footer">
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
-                        <button type="button" class="btn btn-primary" onclick="gaussSolver(2)">Calcular o Sistema</button>
+                        <button type="button" class="btn btn-primary" onclick="gaussSolver(2)">Calcular o
+                            Sistema</button>
                     </div>
                 </div>
             </div>
@@ -115,10 +117,11 @@
     <!-- Modal da matriz 3x3 -->
     <!-- Modal -->
     <div id="m3" class="modal fade" role="dialog">
-        <div class="modal-dialog "style="max-width: 100%; width: auto; display: table;">
+        <div class="modal-dialog " style="max-width: 100%; width: auto; display: table;">
 
             <!-- Conteúdo do modal-->
             <div class="modal-content">
+                <p id="resultado"></p>
                 <!-- Cabeçalho do modal -->
                 <div class="modal-header">
                     <h4 class="modal-title">Matriz 3x3</h4>
@@ -130,51 +133,51 @@
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-3">
-                                <input id="a11" type="text" class="form-control" placeholder="a11"><br>
+                                <input id="M3a11" type="text" class="form-control" placeholder="a11"><br>
                             </div>
                             <div class="col-md-3">
-                                <input id="a12" type="text" class="form-control" placeholder="a12"><br>
+                                <input id="M3a12" type="text" class="form-control" placeholder="a12"><br>
                             </div>
                             <div class="col-md-3">
-                                <input id="a13" type="text" class="form-control" placeholder="a13"><br>
+                                <input id="M3a13" type="text" class="form-control" placeholder="a13"><br>
                             </div>
                             =
                             <div class="col-md-2">
-                                <input id="t1" type="text" class="form-control" placeholder="TI"><br>
+                                <input id="M3t1" type="text" class="form-control" placeholder="TI"><br>
                             </div>
                         </div>
                     </div>
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-3">
-                                <input id="a21" type="text" class="form-control" placeholder="a21"><br>
+                                <input id="M3a21" type="text" class="form-control" placeholder="a21"><br>
                             </div>
                             <div class="col-md-3">
-                                <input id="a22" type="text" class="form-control" placeholder="a22"><br>
+                                <input id="M3a22" type="text" class="form-control" placeholder="a22"><br>
                             </div>
                             <div class="col-md-3">
-                                <input id="a23" type="text" class="form-control" placeholder="a23"><br>
+                                <input id="M3a23" type="text" class="form-control" placeholder="a23"><br>
                             </div>
                             =
                             <div class="col-md-2">
-                                <input id="t2" type="text" class="form-control" placeholder="TI"><br>
+                                <input id="M3t2" type="text" class="form-control" placeholder="TI"><br>
                             </div>
                         </div>
                     </div>
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-3">
-                                <input id="a31" type="text" class="form-control" placeholder="a31"><br>
+                                <input id="M3a31" type="text" class="form-control" placeholder="a31"><br>
                             </div>
                             <div class="col-md-3">
-                                <input id="a32" type="text" class="form-control" placeholder="a32"><br>
+                                <input id="M3a32" type="text" class="form-control" placeholder="a32"><br>
                             </div>
                             <div class="col-md-3">
-                                <input id="a33" type="text" class="form-control" placeholder="a33"><br>
+                                <input id="M3a33" type="text" class="form-control" placeholder="a33"><br>
                             </div>
                             =
                             <div class="col-md-2">
-                                <input id="t3" type="text" class="form-control" placeholder="TI"><br>
+                                <input id="M3t3" type="text" class="form-control" placeholder="TI"><br>
                             </div>
                         </div>
                     </div>
@@ -182,7 +185,8 @@
                     <!-- Rodapé do modal-->
                     <div class="modal-footer">
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
-                        <button type="button" class="btn btn-primary" onclick="gaussSolver(3)">Calcular o Sistema</button>
+                        <button type="button" class="btn btn-primary" onclick="gaussSolver(3)">Calcular o
+                            Sistema</button>
                     </div>
 
                 </div>
@@ -194,10 +198,11 @@
     <!-- Modal -->
 
     <div id="m4" class="modal fade bd-example-modal-lg" role="dialog">
-        <div class="modal-dialog "style="max-width: 100%; width: auto; display: table;">
+        <div class="modal-dialog " style="max-width: 100%; width: auto; display: table;">
 
             <!-- Conteúdo do modal-->
             <div class="modal-content">
+                <p id="resultado"></p>
                 <!-- Cabeçalho do modal -->
                 <div class="modal-header">
                     <h4 class="modal-title">Matriz 4x4</h4>
@@ -209,80 +214,80 @@
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-2">
-                                <input id="a11" type="text" class="form-control" placeholder="a11"><br>
+                                <input id="M4a11" type="text" class="form-control" placeholder="a11"><br>
                             </div>
                             <div class="col-md-2">
-                                <input id="a12" type="text" class="form-control" placeholder="a12"><br>
+                                <input id="M4a12" type="text" class="form-control" placeholder="a12"><br>
                             </div>
                             <div class="col-md-2">
-                                <input id="a13" type="text" class="form-control" placeholder="a13"><br>
+                                <input id="M4a13" type="text" class="form-control" placeholder="a13"><br>
                             </div>
                             <div class="col-md-2">
-                                <input id="a14" type="text" class="form-control" placeholder="a14"><br>
+                                <input id="M4a14" type="text" class="form-control" placeholder="a14"><br>
                             </div>
                             =
                             <div class="col-md-2">
-                                <input id="t1" type="text" class="form-control" placeholder="TI"><br>
+                                <input id="M4t1" type="text" class="form-control" placeholder="TI"><br>
                             </div>
                         </div>
                     </div>
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-2">
-                                <input id="a21" type="text" class="form-control" placeholder="a21"><br>
+                                <input id="M4a21" type="text" class="form-control" placeholder="a21"><br>
                             </div>
                             <div class="col-md-2">
-                                <input id="a22" type="text" class="form-control" placeholder="a22"><br>
+                                <input id="M4a22" type="text" class="form-control" placeholder="a22"><br>
                             </div>
                             <div class="col-md-2">
-                                <input id="a23" type="text" class="form-control" placeholder="a23"><br>
+                                <input id="M4a23" type="text" class="form-control" placeholder="a23"><br>
                             </div>
                             <div class="col-md-2">
-                                <input id="a24" type="text" class="form-control" placeholder="a24"><br>
+                                <input id="M4a24" type="text" class="form-control" placeholder="a24"><br>
                             </div>
                             =
                             <div class="col-md-2">
-                                <input id="t2" type="text" class="form-control" placeholder="TI"><br>
+                                <input id="M4t2" type="text" class="form-control" placeholder="TI"><br>
                             </div>
                         </div>
                     </div>
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-2">
-                                <input id="a31" type="text" class="form-control" placeholder="a31"><br>
+                                <input id="M4a31" type="text" class="form-control" placeholder="a31"><br>
                             </div>
                             <div class="col-md-2">
-                                <input id="a32" type="text" class="form-control" placeholder="a32"><br>
+                                <input id="M4a32" type="text" class="form-control" placeholder="a32"><br>
                             </div>
                             <div class="col-md-2">
-                                <input id="a33" type="text" class="form-control" placeholder="a33"><br>
+                                <input id="M4a33" type="text" class="form-control" placeholder="a33"><br>
                             </div>
                             <div class="col-md-2">
-                                <input id="a34" type="text" class="form-control" placeholder="a34"><br>
+                                <input id="M4a34" type="text" class="form-control" placeholder="a34"><br>
                             </div>
                             =
                             <div class="col-md-2">
-                                <input id="t3" type="text" class="form-control" placeholder="TI"><br>
+                                <input id="M4t3" type="text" class="form-control" placeholder="TI"><br>
                             </div>
                         </div>
                     </div>
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-2">
-                                <input id="a41" type="text" class="form-control" placeholder="a41"><br>
+                                <input id="M4a41" type="text" class="form-control" placeholder="a41"><br>
                             </div>
                             <div class="col-md-2">
-                                <input id="a42" type="text" class="form-control" placeholder="a42"><br>
+                                <input id="M4a42" type="text" class="form-control" placeholder="a42"><br>
                             </div>
                             <div class="col-md-2">
-                                <input id="a43" type="text" class="form-control" placeholder="a43"><br>
+                                <input id="M4a43" type="text" class="form-control" placeholder="a43"><br>
                             </div>
                             <div class="col-md-2">
-                                <input id="a44" type="text" class="form-control" placeholder="a44"><br>
+                                <input id="M4a44" type="text" class="form-control" placeholder="a44"><br>
                             </div>
                             =
                             <div class="col-md-2">
-                                <input id="t4" type="text" class="form-control" placeholder="TI"><br>
+                                <input id="M4t4" type="text" class="form-control" placeholder="TI"><br>
                             </div>
                         </div>
                     </div>
@@ -290,7 +295,8 @@
                     <!-- Rodapé do modal-->
                     <div class="modal-footer">
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
-                        <button type="button" class="btn btn-primary" onclick="gaussSolver(4)">Calcular o Sistema</button>
+                        <button type="button" class="btn btn-primary" onclick="gaussSolver(4)">Calcular o
+                            Sistema</button>
                     </div>
 
                 </div>
@@ -302,10 +308,11 @@
     <!-- Modal -->
 
     <div id="m5" class="modal fade bd-example-modal-lg" role="dialog">
-        <div class="modal-dialog "style="max-width: 100%; width: auto; display: table;">
+        <div class="modal-dialog " style="max-width: 100%; width: auto; display: table;">
 
             <!-- Conteúdo do modal-->
             <div class="modal-content">
+                <p id="resultado"></p>
                 <!-- Cabeçalho do modal -->
                 <div class="modal-header">
                     <h4 class="modal-title">Matriz 5x5</h4>
@@ -317,115 +324,115 @@
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-1">
-                                <input id="a11" type="text" class="form-control" placeholder="a11"><br>
+                                <input id="M5a11" type="text" class="form-control" placeholder="a11"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a12" type="text" class="form-control" placeholder="a12"><br>
+                                <input id="M5a12" type="text" class="form-control" placeholder="a12"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a13" type="text" class="form-control" placeholder="a13"><br>
+                                <input id="M5a13" type="text" class="form-control" placeholder="a13"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a14" type="text" class="form-control" placeholder="a14"><br>
+                                <input id="M5a14" type="text" class="form-control" placeholder="a14"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a15" type="text" class="form-control" placeholder="a15"><br>
+                                <input id="M5a15" type="text" class="form-control" placeholder="a15"><br>
                             </div>
                             =
                             <div class="col-md-1">
-                                <input id="t1" type="text" class="form-control" placeholder="TI"><br>
+                                <input id="M5t1" type="text" class="form-control" placeholder="TI"><br>
                             </div>
                         </div>
                     </div>
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-1">
-                                <input id="a21" type="text" class="form-control" placeholder="a21"><br>
+                                <input id="M5a21" type="text" class="form-control" placeholder="a21"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a22" type="text" class="form-control" placeholder="a22"><br>
+                                <input id="M5a22" type="text" class="form-control" placeholder="a22"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a23" type="text" class="form-control" placeholder="a23"><br>
+                                <input id="M5a23" type="text" class="form-control" placeholder="a23"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a24" type="text" class="form-control" placeholder="a24"><br>
+                                <input id="M5a24" type="text" class="form-control" placeholder="a24"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a25" type="text" class="form-control" placeholder="a25"><br>
+                                <input id="M5a25" type="text" class="form-control" placeholder="a25"><br>
                             </div>
                             =
                             <div class="col-md-1">
-                                <input id="t2" type="text" class="form-control" placeholder="TI"><br>
+                                <input id="M5t2" type="text" class="form-control" placeholder="TI"><br>
                             </div>
                         </div>
                     </div>
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-1">
-                                <input id="a31" type="text" class="form-control" placeholder="a31"><br>
+                                <input id="M5a31" type="text" class="form-control" placeholder="a31"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a32" type="text" class="form-control" placeholder="a32"><br>
+                                <input id="M5a32" type="text" class="form-control" placeholder="a32"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a33" type="text" class="form-control" placeholder="a33"><br>
+                                <input id="M5a33" type="text" class="form-control" placeholder="a33"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a34" type="text" class="form-control" placeholder="a34"><br>
+                                <input id="M5a34" type="text" class="form-control" placeholder="a34"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a35" type="text" class="form-control" placeholder="a35"><br>
+                                <input id="M5a35" type="text" class="form-control" placeholder="a35"><br>
                             </div>
                             =
                             <div class="col-md-1">
-                                <input id="t3" type="text" class="form-control" placeholder="TI"><br>
+                                <input id="M5t3" type="text" class="form-control" placeholder="TI"><br>
                             </div>
                         </div>
                     </div>
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-1">
-                                <input id="a41" type="text" class="form-control" placeholder="a41"><br>
+                                <input id="M5a41" type="text" class="form-control" placeholder="a41"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a42" type="text" class="form-control" placeholder="a42"><br>
+                                <input id="M5a42" type="text" class="form-control" placeholder="a42"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a43" type="text" class="form-control" placeholder="a43"><br>
+                                <input id="M5a43" type="text" class="form-control" placeholder="a43"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a44" type="text" class="form-control" placeholder="a44"><br>
+                                <input id="M5a44" type="text" class="form-control" placeholder="a44"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a45" type="text" class="form-control" placeholder="a45"><br>
+                                <input id="M5a45" type="text" class="form-control" placeholder="a45"><br>
                             </div>
                             =
                             <div class="col-md-1">
-                                <input id="t4" type="text" class="form-control" placeholder="TI"><br>
+                                <input id="M5t4" type="text" class="form-control" placeholder="TI"><br>
                             </div>
                         </div>
                     </div>
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-1">
-                                <input id="a51" type="text" class="form-control" placeholder="a51"><br>
+                                <input id="M5a51" type="text" class="form-control" placeholder="a51"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a52" type="text" class="form-control" placeholder="a52"><br>
+                                <input id="M5a52" type="text" class="form-control" placeholder="a52"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a53" type="text" class="form-control" placeholder="a53"><br>
+                                <input id="M5a53" type="text" class="form-control" placeholder="a53"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a54" type="text" class="form-control" placeholder="a54"><br>
+                                <input id="M5a54" type="text" class="form-control" placeholder="a54"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a55" type="text" class="form-control" placeholder="a55"><br>
+                                <input id="M5a55" type="text" class="form-control" placeholder="a55"><br>
                             </div>
                             =
                             <div class="col-md-1">
-                                <input id="t5" type="text" class="form-control" placeholder="TI"><br>
+                                <input id="M5t5" type="text" class="form-control" placeholder="TI"><br>
                             </div>
                         </div>
                     </div>
@@ -433,7 +440,8 @@
                     <!-- Rodapé do modal-->
                     <div class="modal-footer">
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
-                        <button type="button" class="btn btn-primary" onclick="gaussSolver(5)">Calcular o Sistema</button>
+                        <button type="button" class="btn btn-primary" onclick="gaussSolver(5)">Calcular o
+                            Sistema</button>
                     </div>
 
                 </div>
@@ -445,10 +453,11 @@
     <!-- Modal -->
 
     <div id="m6" class="modal fade bd-example-modal-lg" role="dialog">
-        <div class="modal-dialog "style="max-width: 100%; width: auto; display: table;">
+        <div class="modal-dialog " style="max-width: 100%; width: auto; display: table;">
 
             <!-- Conteúdo do modal-->
             <div class="modal-content">
+                <p id="resultado"></p>
                 <!-- Cabeçalho do modal -->
                 <div class="modal-header">
                     <h4 class="modal-title">Matriz 6x6</h4>
@@ -460,130 +469,130 @@
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-1">
-                                <input id="a11" type="text" class="form-control" placeholder="a11"><br>
+                                <input id="M6a11" type="text" class="form-control" placeholder="a11"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a12" type="text" class="form-control" placeholder="a12"><br>
+                                <input id="M6a12" type="text" class="form-control" placeholder="a12"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a13" type="text" class="form-control" placeholder="a13"><br>
+                                <input id="M6a13" type="text" class="form-control" placeholder="a13"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a14" type="text" class="form-control" placeholder="a14"><br>
+                                <input id="M6a14" type="text" class="form-control" placeholder="a14"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a15" type="text" class="form-control" placeholder="a15"><br>
+                                <input id="M6a15" type="text" class="form-control" placeholder="a15"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a16" type="text" class="form-control" placeholder="a16"><br>
+                                <input id="M6a16" type="text" class="form-control" placeholder="a16"><br>
                             </div>
                             =
                             <div class="col-md-1">
-                                <input id="t1" type="text" class="form-control" placeholder="TI"><br>
+                                <input id="M6t1" type="text" class="form-control" placeholder="TI"><br>
                             </div>
                         </div>
                     </div>
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-1">
-                                <input id="a21" type="text" class="form-control" placeholder="a21"><br>
+                                <input id="M6a21" type="text" class="form-control" placeholder="a21"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a22" type="text" class="form-control" placeholder="a22"><br>
+                                <input id="M6a22" type="text" class="form-control" placeholder="a22"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a23" type="text" class="form-control" placeholder="a23"><br>
+                                <input id="M6a23" type="text" class="form-control" placeholder="a23"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a24" type="text" class="form-control" placeholder="a23"><br>
+                                <input id="M6a24" type="text" class="form-control" placeholder="a23"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a25" type="text" class="form-control" placeholder="a25"><br>
+                                <input id="M6a25" type="text" class="form-control" placeholder="a25"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a26" type="text" class="form-control" placeholder="a26"><br>
+                                <input id="M6a26" type="text" class="form-control" placeholder="a26"><br>
                             </div>
                             =
                             <div class="col-md-1">
-                                <input id="t2" type="text" class="form-control" placeholder="TI"><br>
+                                <input id="M6t2" type="text" class="form-control" placeholder="TI"><br>
                             </div>
                         </div>
                     </div>
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-1">
-                                <input id="a31" type="text" class="form-control" placeholder="a31"><br>
+                                <input id="M6a31" type="text" class="form-control" placeholder="a31"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a32" type="text" class="form-control" placeholder="a32"><br>
+                                <input id="M6a32" type="text" class="form-control" placeholder="a32"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a33" type="text" class="form-control" placeholder="a33"><br>
+                                <input id="M6a33" type="text" class="form-control" placeholder="a33"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a34" type="text" class="form-control" placeholder="a34"><br>
+                                <input id="M6a34" type="text" class="form-control" placeholder="a34"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a35" type="text" class="form-control" placeholder="a35"><br>
+                                <input id="M6a35" type="text" class="form-control" placeholder="a35"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a36" type="text" class="form-control" placeholder="a36"><br>
+                                <input id="M6a36" type="text" class="form-control" placeholder="a36"><br>
                             </div>
                             =
                             <div class="col-md-1">
-                                <input id="t3" type="text" class="form-control" placeholder="TI"><br>
+                                <input id="M6t3" type="text" class="form-control" placeholder="TI"><br>
                             </div>
                         </div>
                     </div>
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-1">
-                                <input id="a41" type="text" class="form-control" placeholder="a41"><br>
+                                <input id="M6a41" type="text" class="form-control" placeholder="a41"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a42" type="text" class="form-control" placeholder="a42"><br>
+                                <input id="M6a42" type="text" class="form-control" placeholder="a42"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a43" type="text" class="form-control" placeholder="a43"><br>
+                                <input id="M6a43" type="text" class="form-control" placeholder="a43"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a44" type="text" class="form-control" placeholder="a44"><br>
+                                <input id="M6a44" type="text" class="form-control" placeholder="a44"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a45" type="text" class="form-control" placeholder="a45"><br>
+                                <input id="M6a45" type="text" class="form-control" placeholder="a45"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a46" type="text" class="form-control" placeholder="a46"><br>
+                                <input id="M6a46" type="text" class="form-control" placeholder="a46"><br>
                             </div>
                             =
                             <div class="col-md-1">
-                                <input id="t4" type="text" class="form-control" placeholder="TI"><br>
+                                <input id="M6t4" type="text" class="form-control" placeholder="TI"><br>
                             </div>
                         </div>
                     </div>
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-1">
-                                <input id="a51" type="text" class="form-control" placeholder="a51"><br>
+                                <input id="M6a51" type="text" class="form-control" placeholder="a51"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a52" type="text" class="form-control" placeholder="a52"><br>
+                                <input id="M6a52" type="text" class="form-control" placeholder="a52"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a53" type="text" class="form-control" placeholder="a53"><br>
+                                <input id="M6a53" type="text" class="form-control" placeholder="a53"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a54" type="text" class="form-control" placeholder="a54"><br>
+                                <input id="M6a54" type="text" class="form-control" placeholder="a54"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a55" type="text" class="form-control" placeholder="a55"><br>
+                                <input id="M6a55" type="text" class="form-control" placeholder="a55"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a56" type="text" class="form-control" placeholder="a56"><br>
+                                <input id="M6a56" type="text" class="form-control" placeholder="a56"><br>
                             </div>
                             =
                             <div class="col-md-1">
-                                <input id="t5" type="text" class="form-control" placeholder="TI"><br>
+                                <input id="M6t5" type="text" class="form-control" placeholder="TI"><br>
                             </div>
                         </div>
                     </div>
@@ -592,26 +601,26 @@
                             <div class="container-fluid">
                                 <div class="row">
                                     <div class="col-md-1">
-                                        <input id="a61" type="text" class="form-control" placeholder="a61"><br>
+                                        <input id="M6a61" type="text" class="form-control" placeholder="a61"><br>
                                     </div>
                                     <div class="col-md-1">
-                                        <input id="a62" type="text" class="form-control" placeholder="a62"><br>
+                                        <input id="M6a62" type="text" class="form-control" placeholder="a62"><br>
                                     </div>
                                     <div class="col-md-1">
-                                        <input id="a63" type="text" class="form-control" placeholder="a63"><br>
+                                        <input id="M6a63" type="text" class="form-control" placeholder="a63"><br>
                                     </div>
                                     <div class="col-md-1">
-                                        <input id="a64" type="text" class="form-control" placeholder="a64"><br>
+                                        <input id="M6a64" type="text" class="form-control" placeholder="a64"><br>
                                     </div>
                                     <div class="col-md-1">
-                                        <input id="a65" type="text" class="form-control" placeholder="a65"><br>
+                                        <input id="M6a65" type="text" class="form-control" placeholder="a65"><br>
                                     </div>
                                     <div class="col-md-1">
-                                        <input id="a66" type="text" class="form-control" placeholder="a66"><br>
+                                        <input id="M6a66" type="text" class="form-control" placeholder="a66"><br>
                                     </div>
                                     =
                                     <div class="col-md-1">
-                                        <input id="t6" type="text" class="form-control" placeholder="TI"><br>
+                                        <input id="M6t6" type="text" class="form-control" placeholder="TI"><br>
                                     </div>
                                 </div>
                             </div>
@@ -621,7 +630,8 @@
                     <!-- Rodapé do modal-->
                     <div class="modal-footer">
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
-                        <button type="button" class="btn btn-primary" onclick="gaussSolver(6)">Calcular o Sistema</button>
+                        <button type="button" class="btn btn-primary" onclick="gaussSolver(6)">Calcular o
+                            Sistema</button>
                     </div>
 
                 </div>
@@ -634,237 +644,236 @@
     <!-- Modal -->
 
     <div id="m7" class="modal fade bd-example-modal-lg" role="dialog">
-        <div class="modal-dialog "style="max-width: 100%; width: auto; display: table;">
+        <div class="modal-dialog " style="max-width: 100%; width: auto; display: table;">
 
             <!-- Conteúdo do modal-->
             <div class="modal-content">
+                <p id="resultado"></p>
                 <!-- Cabeçalho do modal -->
                 <div class="modal-header">
                     <h4 class="modal-title">Matriz 7x7</h4>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
 
-              <!-- Corpo do modal -->
-              <div class="modal-body">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-md-1">
-                            <input id="a11" type="text" class="form-control" placeholder="a11"><br>
-                        </div>
-                        <div class="col-md-1">
-                            <input id="a12" type="text" class="form-control" placeholder="a12"><br>
-                        </div>
-                        <div class="col-md-1">
-                            <input id="a13" type="text" class="form-control" placeholder="a13"><br>
-                        </div>
-                        <div class="col-md-1">
-                            <input id="a14" type="text" class="form-control" placeholder="a14"><br>
-                        </div>
-                        <div class="col-md-1">
-                            <input id="a15" type="text" class="form-control" placeholder="a15"><br>
-                        </div>
-                        <div class="col-md-1">
-                            <input id="a16" type="text" class="form-control" placeholder="a16"><br>
-                        </div>
-                        <div class="col-md-1">
-                            <input id="a17" type="text" class="form-control" placeholder="a17"><br>
-                        </div>
-                        =
-                        <div class="col-md-1">
-                            <input id="t1" type="text" class="form-control" placeholder="TI"><br>
-                        </div>
-                    </div>
-                </div>
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-md-1">
-                            <input id="a21" type="text" class="form-control" placeholder="a21"><br>
-                        </div>
-                        <div class="col-md-1">
-                            <input id="a22" type="text" class="form-control" placeholder="a22"><br>
-                        </div>
-                        <div class="col-md-1">
-                            <input id="a23" type="text" class="form-control" placeholder="a23"><br>
-                        </div>
-                        <div class="col-md-1">
-                            <input id="a24" type="text" class="form-control" placeholder="a23"><br>
-                        </div>
-                        <div class="col-md-1">
-                            <input id="a25" type="text" class="form-control" placeholder="a25"><br>
-                        </div>
-                        <div class="col-md-1">
-                            <input id="a26" type="text" class="form-control" placeholder="a26"><br>
-                        </div>
-                        <div class="col-md-1">
-                            <input id="a27" type="text" class="form-control" placeholder="a27"><br>
-                        </div>
-                        =
-                        <div class="col-md-1">
-                            <input id="t2" type="text" class="form-control" placeholder="TI"><br>
+                <!-- Corpo do modal -->
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-1">
+                                <input id="M7a11" type="text" class="form-control" placeholder="a11"><br>
+                            </div>
+                            <div class="col-md-1">
+                                <input id="M7a12" type="text" class="form-control" placeholder="a12"><br>
+                            </div>
+                            <div class="col-md-1">
+                                <input id="M7a13" type="text" class="form-control" placeholder="a13"><br>
+                            </div>
+                            <div class="col-md-1">
+                                <input id="M7a14" type="text" class="form-control" placeholder="a14"><br>
+                            </div>
+                            <div class="col-md-1">
+                                <input id="M7a15" type="text" class="form-control" placeholder="a15"><br>
+                            </div>
+                            <div class="col-md-1">
+                                <input id="M7a16" type="text" class="form-control" placeholder="a16"><br>
+                            </div>
+                            <div class="col-md-1">
+                                <input id="M7a17" type="text" class="form-control" placeholder="a17"><br>
+                            </div>
+                            =
+                            <div class="col-md-1">
+                                <input id="M7t1" type="text" class="form-control" placeholder="TI"><br>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-md-1">
-                            <input id="a31" type="text" class="form-control" placeholder="a31"><br>
-                        </div>
-                        <div class="col-md-1">
-                            <input id="a32" type="text" class="form-control" placeholder="a32"><br>
-                        </div>
-                        <div class="col-md-1">
-                            <input id="a33" type="text" class="form-control" placeholder="a33"><br>
-                        </div>
-                        <div class="col-md-1">
-                            <input id="a34" type="text" class="form-control" placeholder="a34"><br>
-                        </div>
-                        <div class="col-md-1">
-                            <input id="a35" type="text" class="form-control" placeholder="a35"><br>
-                        </div>
-                        <div class="col-md-1">
-                            <input id="a36" type="text" class="form-control" placeholder="a36"><br>
-                        </div>
-                        <div class="col-md-1">
-                            <input id="a37" type="text" class="form-control" placeholder="a37"><br>
-                        </div>
-                        =
-                        <div class="col-md-1">
-                            <input id="t3" type="text" class="form-control" placeholder="TI"><br>
-                        </div>
-                    </div>
-                </div>
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-md-1">
-                            <input id="a41" type="text" class="form-control" placeholder="a41"><br>
-                        </div>
-                        <div class="col-md-1">
-                            <input id="a42" type="text" class="form-control" placeholder="a42"><br>
-                        </div>
-                        <div class="col-md-1">
-                            <input id="a43" type="text" class="form-control" placeholder="a43"><br>
-                        </div>
-                        <div class="col-md-1">
-                            <input id="a44" type="text" class="form-control" placeholder="a44"><br>
-                        </div>
-                        <div class="col-md-1">
-                            <input id="a45" type="text" class="form-control" placeholder="a45"><br>
-                        </div>
-                        <div class="col-md-1">
-                            <input id="a46" type="text" class="form-control" placeholder="a46"><br>
-                        </div>
-                        <div class="col-md-1">
-                            <input id="a47" type="text" class="form-control" placeholder="a47"><br>
-                        </div>
-                        =
-                        <div class="col-md-1">
-                            <input id="t4" type="text" class="form-control" placeholder="TI"><br>
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-1">
+                                <input id="M7a21" type="text" class="form-control" placeholder="a21"><br>
+                            </div>
+                            <div class="col-md-1">
+                                <input id="M7a22" type="text" class="form-control" placeholder="a22"><br>
+                            </div>
+                            <div class="col-md-1">
+                                <input id="M7a23" type="text" class="form-control" placeholder="a23"><br>
+                            </div>
+                            <div class="col-md-1">
+                                <input id="M7a24" type="text" class="form-control" placeholder="a23"><br>
+                            </div>
+                            <div class="col-md-1">
+                                <input id="M7a25" type="text" class="form-control" placeholder="a25"><br>
+                            </div>
+                            <div class="col-md-1">
+                                <input id="M7a26" type="text" class="form-control" placeholder="a26"><br>
+                            </div>
+                            <div class="col-md-1">
+                                <input id="M7a27" type="text" class="form-control" placeholder="a27"><br>
+                            </div>
+                            =
+                            <div class="col-md-1">
+                                <input id="M7t2" type="text" class="form-control" placeholder="TI"><br>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-md-1">
-                            <input id="a51" type="text" class="form-control" placeholder="a51"><br>
-                        </div>
-                        <div class="col-md-1">
-                            <input id="a52" type="text" class="form-control" placeholder="a52"><br>
-                        </div>
-                        <div class="col-md-1">
-                            <input id="a53" type="text" class="form-control" placeholder="a53"><br>
-                        </div>
-                        <div class="col-md-1">
-                            <input id="a54" type="text" class="form-control" placeholder="a54"><br>
-                        </div>
-                        <div class="col-md-1">
-                            <input id="a55" type="text" class="form-control" placeholder="a55"><br>
-                        </div>
-                        <div class="col-md-1">
-                            <input id="a55" type="text" class="form-control" placeholder="a55"><br>
-                        </div>
-                        <div class="col-md-1">
-                            <input id="a56" type="text" class="form-control" placeholder="a56"><br>
-                        </div>
-                        <div class="col-md-1">
-                            <input id="a57" type="text" class="form-control" placeholder="a57"><br>
-                        </div>
-                        =
-                        <div class="col-md-1">
-                            <input id="t5" type="text" class="form-control" placeholder="TI"><br>
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-1">
+                                <input id="M7a31" type="text" class="form-control" placeholder="a31"><br>
+                            </div>
+                            <div class="col-md-1">
+                                <input id="M7a32" type="text" class="form-control" placeholder="a32"><br>
+                            </div>
+                            <div class="col-md-1">
+                                <input id="M7a33" type="text" class="form-control" placeholder="a33"><br>
+                            </div>
+                            <div class="col-md-1">
+                                <input id="M7a34" type="text" class="form-control" placeholder="a34"><br>
+                            </div>
+                            <div class="col-md-1">
+                                <input id="M7a35" type="text" class="form-control" placeholder="a35"><br>
+                            </div>
+                            <div class="col-md-1">
+                                <input id="M7a36" type="text" class="form-control" placeholder="a36"><br>
+                            </div>
+                            <div class="col-md-1">
+                                <input id="M7a37" type="text" class="form-control" placeholder="a37"><br>
+                            </div>
+                            =
+                            <div class="col-md-1">
+                                <input id="M7t3" type="text" class="form-control" placeholder="TI"><br>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="container-fluid">
-                            <div class="row">
-                                <div class="col-md-1">
-                                    <input id="a61" type="text" class="form-control" placeholder="a61"><br>
-                                </div>
-                                <div class="col-md-1">
-                                    <input id="a62" type="text" class="form-control" placeholder="a62"><br>
-                                </div>
-                                <div class="col-md-1">
-                                    <input id="a63" type="text" class="form-control" placeholder="a63"><br>
-                                </div>
-                                <div class="col-md-1">
-                                    <input id="a64" type="text" class="form-control" placeholder="a64"><br>
-                                </div>
-                                <div class="col-md-1">
-                                    <input id="a65" type="text" class="form-control" placeholder="a65"><br>
-                                </div>
-                                <div class="col-md-1">
-                                    <input id="a66" type="text" class="form-control" placeholder="a66"><br>
-                                </div>
-                                <div class="col-md-1">
-                                    <input id="a67" type="text" class="form-control" placeholder="a67"><br>
-                                </div>
-                                =
-                                <div class="col-md-1">
-                                    <input id="t6" type="text" class="form-control" placeholder="TI"><br>
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-1">
+                                <input id="M7a41" type="text" class="form-control" placeholder="a41"><br>
+                            </div>
+                            <div class="col-md-1">
+                                <input id="M7a42" type="text" class="form-control" placeholder="a42"><br>
+                            </div>
+                            <div class="col-md-1">
+                                <input id="M7a43" type="text" class="form-control" placeholder="a43"><br>
+                            </div>
+                            <div class="col-md-1">
+                                <input id="M7a44" type="text" class="form-control" placeholder="a44"><br>
+                            </div>
+                            <div class="col-md-1">
+                                <input id="M7a45" type="text" class="form-control" placeholder="a45"><br>
+                            </div>
+                            <div class="col-md-1">
+                                <input id="M7a46" type="text" class="form-control" placeholder="a46"><br>
+                            </div>
+                            <div class="col-md-1">
+                                <input id="M7a47" type="text" class="form-control" placeholder="a47"><br>
+                            </div>
+                            =
+                            <div class="col-md-1">
+                                <input id="M7t4" type="text" class="form-control" placeholder="TI"><br>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-1">
+                                <input id="M7a51" type="text" class="form-control" placeholder="a51"><br>
+                            </div>
+                            <div class="col-md-1">
+                                <input id="M7a52" type="text" class="form-control" placeholder="a52"><br>
+                            </div>
+                            <div class="col-md-1">
+                                <input id="M7a53" type="text" class="form-control" placeholder="a53"><br>
+                            </div>
+                            <div class="col-md-1">
+                                <input id="M7a54" type="text" class="form-control" placeholder="a54"><br>
+                            </div>
+                            <div class="col-md-1">
+                                <input id="M7a55" type="text" class="form-control" placeholder="a55"><br>
+                            </div>
+                            <div class="col-md-1">
+                                <input id="M7a56" type="text" class="form-control" placeholder="a56"><br>
+                            </div>
+                            <div class="col-md-1">
+                                <input id="M7a57" type="text" class="form-control" placeholder="a57"><br>
+                            </div>
+                            =
+                            <div class="col-md-1">
+                                <input id="M7t5" type="text" class="form-control" placeholder="TI"><br>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-md-1">
+                                        <input id="M7a61" type="text" class="form-control" placeholder="a61"><br>
+                                    </div>
+                                    <div class="col-md-1">
+                                        <input id="M7a62" type="text" class="form-control" placeholder="a62"><br>
+                                    </div>
+                                    <div class="col-md-1">
+                                        <input id="M7a63" type="text" class="form-control" placeholder="a63"><br>
+                                    </div>
+                                    <div class="col-md-1">
+                                        <input id="M7a64" type="text" class="form-control" placeholder="a64"><br>
+                                    </div>
+                                    <div class="col-md-1">
+                                        <input id="M7a65" type="text" class="form-control" placeholder="a65"><br>
+                                    </div>
+                                    <div class="col-md-1">
+                                        <input id="M7a66" type="text" class="form-control" placeholder="a66"><br>
+                                    </div>
+                                    <div class="col-md-1">
+                                        <input id="M7a67" type="text" class="form-control" placeholder="a67"><br>
+                                    </div>
+                                    =
+                                    <div class="col-md-1">
+                                        <input id="M7t6" type="text" class="form-control" placeholder="TI"><br>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="container-fluid">
-                            <div class="row">
-                                <div class="col-md-1">
-                                    <input id="a71" type="text" class="form-control" placeholder="a71"><br>
-                                </div>
-                                <div class="col-md-1">
-                                    <input id="a72" type="text" class="form-control" placeholder="a72"><br>
-                                </div>
-                                <div class="col-md-1">
-                                    <input id="a73" type="text" class="form-control" placeholder="a73"><br>
-                                </div>
-                                <div class="col-md-1">
-                                    <input id="a74" type="text" class="form-control" placeholder="a74"><br>
-                                </div>
-                                <div class="col-md-1">
-                                    <input id="a75" type="text" class="form-control" placeholder="a75"><br>
-                                </div>
-                                <div class="col-md-1">
-                                    <input id="a76" type="text" class="form-control" placeholder="a76"><br>
-                                </div>
-                                <div class="col-md-1">
-                                    <input id="a77" type="text" class="form-control" placeholder="a77"><br>
-                                </div>
-                                =
-                                <div class="col-md-1">
-                                    <input id="t7" type="text" class="form-control" placeholder="TI"><br>
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-md-1">
+                                        <input id="M7a71" type="text" class="form-control" placeholder="a71"><br>
+                                    </div>
+                                    <div class="col-md-1">
+                                        <input id="M7a72" type="text" class="form-control" placeholder="a72"><br>
+                                    </div>
+                                    <div class="col-md-1">
+                                        <input id="M7a73" type="text" class="form-control" placeholder="a73"><br>
+                                    </div>
+                                    <div class="col-md-1">
+                                        <input id="M7a74" type="text" class="form-control" placeholder="a74"><br>
+                                    </div>
+                                    <div class="col-md-1">
+                                        <input id="M7a75" type="text" class="form-control" placeholder="a75"><br>
+                                    </div>
+                                    <div class="col-md-1">
+                                        <input id="M7a76" type="text" class="form-control" placeholder="a76"><br>
+                                    </div>
+                                    <div class="col-md-1">
+                                        <input id="M7a77" type="text" class="form-control" placeholder="a77"><br>
+                                    </div>
+                                    =
+                                    <div class="col-md-1">
+                                        <input id="M7t7" type="text" class="form-control" placeholder="TI"><br>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
                     <!-- Rodapé do modal-->
                     <div class="modal-footer">
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
-                        <button type="button" class="btn btn-primary" onclick="gaussSolver(7)">Calcular o Sistema</button>
+                        <button type="button" class="btn btn-primary" onclick="gaussSolver(7)">Calcular o
+                            Sistema</button>
                     </div>
 
                 </div>
@@ -876,10 +885,11 @@
     <!-- Modal -->
 
     <div id="m8" class="modal fade bd-example-modal-lg" role="dialog">
-        <div class="modal-dialog "style="max-width: 100%; width: auto; display: table;">
+        <div class="modal-dialog " style="max-width: 100%; width: auto; display: table;">
 
             <!-- Conteúdo do modal-->
             <div class="modal-content">
+                <p id="resultado"></p>
                 <!-- Cabeçalho do modal -->
                 <div class="modal-header">
                     <h4 class="modal-title">Matriz 8x8</h4>
@@ -891,256 +901,256 @@
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-1">
-                                <input id="a11" type="text" class="form-control" placeholder="a11"><br>
+                                <input id="M8a11" type="text" class="form-control" placeholder="a11"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a12" type="text" class="form-control" placeholder="a12"><br>
+                                <input id="M8a12" type="text" class="form-control" placeholder="a12"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a13" type="text" class="form-control" placeholder="a13"><br>
+                                <input id="M8a13" type="text" class="form-control" placeholder="a13"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a14" type="text" class="form-control" placeholder="a14"><br>
+                                <input id="M8a14" type="text" class="form-control" placeholder="a14"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a15" type="text" class="form-control" placeholder="a15"><br>
+                                <input id="M8a15" type="text" class="form-control" placeholder="a15"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a16" type="text" class="form-control" placeholder="a16"><br>
+                                <input id="M8a16" type="text" class="form-control" placeholder="a16"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a17" type="text" class="form-control" placeholder="a17"><br>
+                                <input id="M8a17" type="text" class="form-control" placeholder="a17"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a18" type="text" class="form-control" placeholder="a18"><br>
+                                <input id="M8a18" type="text" class="form-control" placeholder="a18"><br>
                             </div>
                             =
                             <div class="col-md-1">
-                                <input id="t1" type="text" class="form-control" placeholder="TI"><br>
+                                <input id="M8t1" type="text" class="form-control" placeholder="TI"><br>
                             </div>
                         </div>
                     </div>
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-1">
-                                <input id="a21" type="text" class="form-control" placeholder="a21"><br>
+                                <input id="M8a21" type="text" class="form-control" placeholder="a21"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a22" type="text" class="form-control" placeholder="a22"><br>
+                                <input id="M8a22" type="text" class="form-control" placeholder="a22"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a23" type="text" class="form-control" placeholder="a23"><br>
+                                <input id="M8a23" type="text" class="form-control" placeholder="a23"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a24" type="text" class="form-control" placeholder="a24"><br>
+                                <input id="M8a24" type="text" class="form-control" placeholder="a24"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a25" type="text" class="form-control" placeholder="a25"><br>
+                                <input id="M8a25" type="text" class="form-control" placeholder="a25"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a26" type="text" class="form-control" placeholder="a26"><br>
+                                <input id="M8a26" type="text" class="form-control" placeholder="a26"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a27" type="text" class="form-control" placeholder="a27"><br>
+                                <input id="M8a27" type="text" class="form-control" placeholder="a27"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a28" type="text" class="form-control" placeholder="a28"><br>
+                                <input id="M8a28" type="text" class="form-control" placeholder="a28"><br>
                             </div>
                             =
                             <div class="col-md-1">
-                                <input id="t2" type="text" class="form-control" placeholder="TI"><br>
+                                <input id="M8t2" type="text" class="form-control" placeholder="TI"><br>
                             </div>
                         </div>
                     </div>
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-1">
-                                <input id="a31" type="text" class="form-control" placeholder="a31"><br>
+                                <input id="M8a31" type="text" class="form-control" placeholder="a31"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a32" type="text" class="form-control" placeholder="a32"><br>
+                                <input id="M8a32" type="text" class="form-control" placeholder="a32"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a33" type="text" class="form-control" placeholder="a33"><br>
+                                <input id="M8a33" type="text" class="form-control" placeholder="a33"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a34" type="text" class="form-control" placeholder="a34"><br>
+                                <input id="M8a34" type="text" class="form-control" placeholder="a34"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a35" type="text" class="form-control" placeholder="a35"><br>
+                                <input id="M8a35" type="text" class="form-control" placeholder="a35"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a36" type="text" class="form-control" placeholder="a36"><br>
+                                <input id="M8a36" type="text" class="form-control" placeholder="a36"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a37" type="text" class="form-control" placeholder="a37"><br>
+                                <input id="M8a37" type="text" class="form-control" placeholder="a37"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a38" type="text" class="form-control" placeholder="a38"><br>
+                                <input id="M8a38" type="text" class="form-control" placeholder="a38"><br>
                             </div>
                             =
                             <div class="col-md-1">
-                                <input id="t3" type="text" class="form-control" placeholder="TI"><br>
+                                <input id="M8t3" type="text" class="form-control" placeholder="TI"><br>
                             </div>
                         </div>
                     </div>
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-1">
-                                <input id="a41" type="text" class="form-control" placeholder="a41"><br>
+                                <input id="M8a41" type="text" class="form-control" placeholder="a41"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a42" type="text" class="form-control" placeholder="a42"><br>
+                                <input id="M8a42" type="text" class="form-control" placeholder="a42"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a43" type="text" class="form-control" placeholder="a43"><br>
+                                <input id="M8a43" type="text" class="form-control" placeholder="a43"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a44" type="text" class="form-control" placeholder="a44"><br>
+                                <input id="M8a44" type="text" class="form-control" placeholder="a44"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a45" type="text" class="form-control" placeholder="a45"><br>
+                                <input id="M8a45" type="text" class="form-control" placeholder="a45"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a46" type="text" class="form-control" placeholder="a46"><br>
+                                <input id="M8a46" type="text" class="form-control" placeholder="a46"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a47" type="text" class="form-control" placeholder="a47"><br>
+                                <input id="M8a47" type="text" class="form-control" placeholder="a47"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a48" type="text" class="form-control" placeholder="a48"><br>
+                                <input id="M8a48" type="text" class="form-control" placeholder="a48"><br>
                             </div>
                             =
                             <div class="col-md-1">
-                                <input id="t4" type="text" class="form-control" placeholder="TI"><br>
+                                <input id="M8t4" type="text" class="form-control" placeholder="TI"><br>
                             </div>
                         </div>
                     </div>
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-1">
-                                <input id="a51" type="text" class="form-control" placeholder="a51"><br>
+                                <input id="M8a51" type="text" class="form-control" placeholder="a51"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a52" type="text" class="form-control" placeholder="a52"><br>
+                                <input id="M8a52" type="text" class="form-control" placeholder="a52"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a53" type="text" class="form-control" placeholder="a53"><br>
+                                <input id="M8a53" type="text" class="form-control" placeholder="a53"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a54" type="text" class="form-control" placeholder="a54"><br>
+                                <input id="M8a54" type="text" class="form-control" placeholder="a54"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a55" type="text" class="form-control" placeholder="a55"><br>
+                                <input id="M8a55" type="text" class="form-control" placeholder="a55"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a56" type="text" class="form-control" placeholder="a56"><br>
+                                <input id="M8a56" type="text" class="form-control" placeholder="a56"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a57" type="text" class="form-control" placeholder="a57"><br>
+                                <input id="M8a57" type="text" class="form-control" placeholder="a57"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a58" type="text" class="form-control" placeholder="a58"><br>
+                                <input id="M8a58" type="text" class="form-control" placeholder="a58"><br>
                             </div>
                             =
                             <div class="col-md-1">
-                                <input id="t5" type="text" class="form-control" placeholder="TI"><br>
+                                <input id="M8t5" type="text" class="form-control" placeholder="TI"><br>
                             </div>
                         </div>
                     </div>
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-1">
-                                <input id="a61" type="text" class="form-control" placeholder="a61"><br>
+                                <input id="M8a61" type="text" class="form-control" placeholder="a61"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a62" type="text" class="form-control" placeholder="a62"><br>
+                                <input id="M8a62" type="text" class="form-control" placeholder="a62"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a63" type="text" class="form-control" placeholder="a63"><br>
+                                <input id="M8a63" type="text" class="form-control" placeholder="a63"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a64" type="text" class="form-control" placeholder="a64"><br>
+                                <input id="M8a64" type="text" class="form-control" placeholder="a64"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a65" type="text" class="form-control" placeholder="a65"><br>
+                                <input id="M8a65" type="text" class="form-control" placeholder="a65"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a66" type="text" class="form-control" placeholder="a66"><br>
+                                <input id="M8a66" type="text" class="form-control" placeholder="a66"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a67" type="text" class="form-control" placeholder="a67"><br>
+                                <input id="M8a67" type="text" class="form-control" placeholder="a67"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a68" type="text" class="form-control" placeholder="a68"><br>
+                                <input id="M8a68" type="text" class="form-control" placeholder="a68"><br>
                             </div>
                             =
                             <div class="col-md-1">
-                                <input id="t6" type="text" class="form-control" placeholder="TI"><br>
+                                <input id="M8t6" type="text" class="form-control" placeholder="TI"><br>
                             </div>
                         </div>
                     </div>
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-1">
-                                <input id="a71" type="text" class="form-control" placeholder="a71"><br>
+                                <input id="M8a71" type="text" class="form-control" placeholder="a71"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a72" type="text" class="form-control" placeholder="a72"><br>
+                                <input id="M8a72" type="text" class="form-control" placeholder="a72"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a73" type="text" class="form-control" placeholder="a73"><br>
+                                <input id="M8a73" type="text" class="form-control" placeholder="a73"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a74" type="text" class="form-control" placeholder="a74"><br>
+                                <input id="M8a74" type="text" class="form-control" placeholder="a74"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a75" type="text" class="form-control" placeholder="a75"><br>
+                                <input id="M8a75" type="text" class="form-control" placeholder="a75"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a76" type="text" class="form-control" placeholder="a76"><br>
+                                <input id="M8a76" type="text" class="form-control" placeholder="a76"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a77" type="text" class="form-control" placeholder="a77"><br>
+                                <input id="M8a77" type="text" class="form-control" placeholder="a77"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a78" type="text" class="form-control" placeholder="a78"><br>
+                                <input id="M8a78" type="text" class="form-control" placeholder="a78"><br>
                             </div>
                             =
                             <div class="col-md-1">
-                                <input id="t7" type="text" class="form-control" placeholder="TI"><br>
+                                <input id="M8t7" type="text" class="form-control" placeholder="TI"><br>
                             </div>
                         </div>
                     </div>
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-1">
-                                <input id="a81" type="text" class="form-control" placeholder="a81"><br>
+                                <input id="M8a81" type="text" class="form-control" placeholder="a81"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a82" type="text" class="form-control" placeholder="a82"><br>
+                                <input id="M8a82" type="text" class="form-control" placeholder="a82"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a83" type="text" class="form-control" placeholder="a83"><br>
+                                <input id="M8a83" type="text" class="form-control" placeholder="a83"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a84" type="text" class="form-control" placeholder="a84"><br>
+                                <input id="M8a84" type="text" class="form-control" placeholder="a84"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a85" type="text" class="form-control" placeholder="a85"><br>
+                                <input id="M8a85" type="text" class="form-control" placeholder="a85"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a86" type="text" class="form-control" placeholder="a86"><br>
+                                <input id="M8a86" type="text" class="form-control" placeholder="a86"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a87" type="text" class="form-control" placeholder="a87"><br>
+                                <input id="M8a87" type="text" class="form-control" placeholder="a87"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a88" type="text" class="form-control" placeholder="a48"><br>
+                                <input id="M8a88" type="text" class="form-control" placeholder="a48"><br>
                             </div>
                             =
                             <div class="col-md-1">
-                                <input id="t4" type="text" class="form-control" placeholder="TI"><br>
+                                <input id="M8t8" type="text" class="form-control" placeholder="TI"><br>
                             </div>
                         </div>
                     </div>
@@ -1160,10 +1170,11 @@
     <!-- Modal -->
 
     <div id="m9" class="modal fade bd-example-modal-lg" role="dialog">
-        <div class="modal-dialog "style="max-width: 100%; width: auto; display: table;">
+        <div class="modal-dialog " style="max-width: 100%; width: auto; display: table;">
 
             <!-- Conteúdo do modal-->
             <div class="modal-content">
+                <p id="resultado"></p>
                 <!-- Cabeçalho do modal -->
                 <div class="modal-header">
                     <h4 class="modal-title">Matriz 9x9</h4>
@@ -1175,315 +1186,315 @@
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-1">
-                                <input id="a11" type="text" class="form-control" placeholder="a11"><br>
+                                <input id="M9a11" type="text" class="form-control" placeholder="a11"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a12" type="text" class="form-control" placeholder="a12"><br>
+                                <input id="M9a12" type="text" class="form-control" placeholder="a12"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a13" type="text" class="form-control" placeholder="a13"><br>
+                                <input id="M9a13" type="text" class="form-control" placeholder="a13"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a14" type="text" class="form-control" placeholder="a14"><br>
+                                <input id="M9a14" type="text" class="form-control" placeholder="a14"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a15" type="text" class="form-control" placeholder="a15"><br>
+                                <input id="M9a15" type="text" class="form-control" placeholder="a15"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a16" type="text" class="form-control" placeholder="a16"><br>
+                                <input id="M9a16" type="text" class="form-control" placeholder="a16"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a17" type="text" class="form-control" placeholder="a17"><br>
+                                <input id="M9a17" type="text" class="form-control" placeholder="a17"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a18" type="text" class="form-control" placeholder="a18"><br>
+                                <input id="M9a18" type="text" class="form-control" placeholder="a18"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a19" type="text" class="form-control" placeholder="a19"><br>
+                                <input id="M9a19" type="text" class="form-control" placeholder="a19"><br>
                             </div>
                             =
                             <div class="col-md-1">
-                                <input id="t1" type="text" class="form-control" placeholder="TI"><br>
+                                <input id="M9t1" type="text" class="form-control" placeholder="TI"><br>
                             </div>
                         </div>
                     </div>
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-1">
-                                <input id="a21" type="text" class="form-control" placeholder="a21"><br>
+                                <input id="M9a21" type="text" class="form-control" placeholder="a21"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a22" type="text" class="form-control" placeholder="a22"><br>
+                                <input id="M9a22" type="text" class="form-control" placeholder="a22"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a23" type="text" class="form-control" placeholder="a23"><br>
+                                <input id="M9a23" type="text" class="form-control" placeholder="a23"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a24" type="text" class="form-control" placeholder="a24"><br>
+                                <input id="M9a24" type="text" class="form-control" placeholder="a24"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a25" type="text" class="form-control" placeholder="a25"><br>
+                                <input id="M9a25" type="text" class="form-control" placeholder="a25"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a26" type="text" class="form-control" placeholder="a26"><br>
+                                <input id="M9a26" type="text" class="form-control" placeholder="a26"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a27" type="text" class="form-control" placeholder="a27"><br>
+                                <input id="M9a27" type="text" class="form-control" placeholder="a27"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a28" type="text" class="form-control" placeholder="a28"><br>
+                                <input id="M9a28" type="text" class="form-control" placeholder="a28"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a29" type="text" class="form-control" placeholder="a29"><br>
+                                <input id="M9a29" type="text" class="form-control" placeholder="a29"><br>
                             </div>
                             =
                             <div class="col-md-1">
-                                <input id="t2" type="text" class="form-control" placeholder="TI"><br>
+                                <input id="M9t2" type="text" class="form-control" placeholder="TI"><br>
                             </div>
                         </div>
                     </div>
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-1">
-                                <input id="a31" type="text" class="form-control" placeholder="a31"><br>
+                                <input id="M9a31" type="text" class="form-control" placeholder="a31"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a32" type="text" class="form-control" placeholder="a32"><br>
+                                <input id="M9a32" type="text" class="form-control" placeholder="a32"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a33" type="text" class="form-control" placeholder="a33"><br>
+                                <input id="M9a33" type="text" class="form-control" placeholder="a33"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a34" type="text" class="form-control" placeholder="a34"><br>
+                                <input id="M9a34" type="text" class="form-control" placeholder="a34"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a35" type="text" class="form-control" placeholder="a35"><br>
+                                <input id="M9a35" type="text" class="form-control" placeholder="a35"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a36" type="text" class="form-control" placeholder="a36"><br>
+                                <input id="M9a36" type="text" class="form-control" placeholder="a36"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a37" type="text" class="form-control" placeholder="a37"><br>
+                                <input id="M9a37" type="text" class="form-control" placeholder="a37"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a38" type="text" class="form-control" placeholder="a38"><br>
+                                <input id="M9a38" type="text" class="form-control" placeholder="a38"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a39" type="text" class="form-control" placeholder="a39"><br>
+                                <input id="M9a39" type="text" class="form-control" placeholder="a39"><br>
                             </div>
                             =
                             <div class="col-md-1">
-                                <input id="t3" type="text" class="form-control" placeholder="TI"><br>
+                                <input id="M9t3" type="text" class="form-control" placeholder="TI"><br>
                             </div>
                         </div>
                     </div>
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-1">
-                                <input id="a41" type="text" class="form-control" placeholder="a41"><br>
+                                <input id="M9a41" type="text" class="form-control" placeholder="a41"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a42" type="text" class="form-control" placeholder="a42"><br>
+                                <input id="M9a42" type="text" class="form-control" placeholder="a42"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a43" type="text" class="form-control" placeholder="a43"><br>
+                                <input id="M9a43" type="text" class="form-control" placeholder="a43"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a44" type="text" class="form-control" placeholder="a44"><br>
+                                <input id="M9a44" type="text" class="form-control" placeholder="a44"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a45" type="text" class="form-control" placeholder="a45"><br>
+                                <input id="M9a45" type="text" class="form-control" placeholder="a45"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a46" type="text" class="form-control" placeholder="a46"><br>
+                                <input id="M9a46" type="text" class="form-control" placeholder="a46"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a47" type="text" class="form-control" placeholder="a47"><br>
+                                <input id="M9a47" type="text" class="form-control" placeholder="a47"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a48" type="text" class="form-control" placeholder="a48"><br>
+                                <input id="M9a48" type="text" class="form-control" placeholder="a48"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a49" type="text" class="form-control" placeholder="a49"><br>
+                                <input id="M9a49" type="text" class="form-control" placeholder="a49"><br>
                             </div>
                             =
                             <div class="col-md-1">
-                                <input id="t4" type="text" class="form-control" placeholder="TI"><br>
+                                <input id="M9t4" type="text" class="form-control" placeholder="TI"><br>
                             </div>
                         </div>
                     </div>
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-1">
-                                <input id="a51" type="text" class="form-control" placeholder="a51"><br>
+                                <input id="M9a51" type="text" class="form-control" placeholder="a51"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a52" type="text" class="form-control" placeholder="a52"><br>
+                                <input id="M9a52" type="text" class="form-control" placeholder="a52"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a53" type="text" class="form-control" placeholder="a53"><br>
+                                <input id="M9a53" type="text" class="form-control" placeholder="a53"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a54" type="text" class="form-control" placeholder="a54"><br>
+                                <input id="M9a54" type="text" class="form-control" placeholder="a54"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a55" type="text" class="form-control" placeholder="a55"><br>
+                                <input id="M9a55" type="text" class="form-control" placeholder="a55"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a56" type="text" class="form-control" placeholder="a56"><br>
+                                <input id="M9a56" type="text" class="form-control" placeholder="a56"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a57" type="text" class="form-control" placeholder="a57"><br>
+                                <input id="M9a57" type="text" class="form-control" placeholder="a57"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a58" type="text" class="form-control" placeholder="a58"><br>
+                                <input id="M9a58" type="text" class="form-control" placeholder="a58"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a59" type="text" class="form-control" placeholder="a59"><br>
+                                <input id="M9a59" type="text" class="form-control" placeholder="a59"><br>
                             </div>
                             =
                             <div class="col-md-1">
-                                <input id="t5" type="text" class="form-control" placeholder="TI"><br>
+                                <input id="M9t5" type="text" class="form-control" placeholder="TI"><br>
                             </div>
                         </div>
                     </div>
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-1">
-                                <input id="a61" type="text" class="form-control" placeholder="a61"><br>
+                                <input id="M9a61" type="text" class="form-control" placeholder="a61"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a62" type="text" class="form-control" placeholder="a62"><br>
+                                <input id="M9a62" type="text" class="form-control" placeholder="a62"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a63" type="text" class="form-control" placeholder="a63"><br>
+                                <input id="M9a63" type="text" class="form-control" placeholder="a63"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a64" type="text" class="form-control" placeholder="a64"><br>
+                                <input id="M9a64" type="text" class="form-control" placeholder="a64"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a65" type="text" class="form-control" placeholder="a65"><br>
+                                <input id="M9a65" type="text" class="form-control" placeholder="a65"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a66" type="text" class="form-control" placeholder="a66"><br>
+                                <input id="M9a66" type="text" class="form-control" placeholder="a66"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a67" type="text" class="form-control" placeholder="a67"><br>
+                                <input id="M9a67" type="text" class="form-control" placeholder="a67"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a68" type="text" class="form-control" placeholder="a68"><br>
+                                <input id="M9a68" type="text" class="form-control" placeholder="a68"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a69" type="text" class="form-control" placeholder="a69"><br>
+                                <input id="M9a69" type="text" class="form-control" placeholder="a69"><br>
                             </div>
                             =
                             <div class="col-md-1">
-                                <input id="t6" type="text" class="form-control" placeholder="TI"><br>
+                                <input id="M9t6" type="text" class="form-control" placeholder="TI"><br>
                             </div>
                         </div>
                     </div>
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-1">
-                                <input id="a71" type="text" class="form-control" placeholder="a71"><br>
+                                <input id="M9a71" type="text" class="form-control" placeholder="a71"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a72" type="text" class="form-control" placeholder="a72"><br>
+                                <input id="M9a72" type="text" class="form-control" placeholder="a72"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a73" type="text" class="form-control" placeholder="a73"><br>
+                                <input id="M9a73" type="text" class="form-control" placeholder="a73"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a74" type="text" class="form-control" placeholder="a74"><br>
+                                <input id="M9a74" type="text" class="form-control" placeholder="a74"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a75" type="text" class="form-control" placeholder="a75"><br>
+                                <input id="M9a75" type="text" class="form-control" placeholder="a75"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a76" type="text" class="form-control" placeholder="a76"><br>
+                                <input id="M9a76" type="text" class="form-control" placeholder="a76"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a77" type="text" class="form-control" placeholder="a77"><br>
+                                <input id="M9a77" type="text" class="form-control" placeholder="a77"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a78" type="text" class="form-control" placeholder="a78"><br>
+                                <input id="M9a78" type="text" class="form-control" placeholder="a78"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a79" type="text" class="form-control" placeholder="a79"><br>
+                                <input id="M9a79" type="text" class="form-control" placeholder="a79"><br>
                             </div>
                             =
                             <div class="col-md-1">
-                                <input id="t7" type="text" class="form-control" placeholder="TI"><br>
+                                <input id="M9t7" type="text" class="form-control" placeholder="TI"><br>
                             </div>
                         </div>
                     </div>
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-1">
-                                <input id="a81" type="text" class="form-control" placeholder="a81"><br>
+                                <input id="M9a81" type="text" class="form-control" placeholder="a81"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a82" type="text" class="form-control" placeholder="a82"><br>
+                                <input id="M9a82" type="text" class="form-control" placeholder="a82"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a83" type="text" class="form-control" placeholder="a83"><br>
+                                <input id="M9a83" type="text" class="form-control" placeholder="a83"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a84" type="text" class="form-control" placeholder="a84"><br>
+                                <input id="M9a84" type="text" class="form-control" placeholder="a84"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a85" type="text" class="form-control" placeholder="a85"><br>
+                                <input id="M9a85" type="text" class="form-control" placeholder="a85"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a86" type="text" class="form-control" placeholder="a86"><br>
+                                <input id="M9a86" type="text" class="form-control" placeholder="a86"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a87" type="text" class="form-control" placeholder="a87"><br>
+                                <input id="M9a87" type="text" class="form-control" placeholder="a87"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a88" type="text" class="form-control" placeholder="a88"><br>
+                                <input id="M9a88" type="text" class="form-control" placeholder="a88"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a89" type="text" class="form-control" placeholder="a89"><br>
+                                <input id="M9a89" type="text" class="form-control" placeholder="a89"><br>
                             </div>
                             =
                             <div class="col-md-1">
-                                <input id="t8" type="text" class="form-control" placeholder="TI"><br>
+                                <input id="M9t8" type="text" class="form-control" placeholder="TI"><br>
                             </div>
                         </div>
                     </div>
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-1">
-                                <input id="a91" type="text" class="form-control" placeholder="a91"><br>
+                                <input id="M9a91" type="text" class="form-control" placeholder="a91"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a92" type="text" class="form-control" placeholder="a92"><br>
+                                <input id="M9a92" type="text" class="form-control" placeholder="a92"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a93" type="text" class="form-control" placeholder="a93"><br>
+                                <input id="M9a93" type="text" class="form-control" placeholder="a93"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a94" type="text" class="form-control" placeholder="a94"><br>
+                                <input id="M9a94" type="text" class="form-control" placeholder="a94"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a95" type="text" class="form-control" placeholder="a95"><br>
+                                <input id="M9a95" type="text" class="form-control" placeholder="a95"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a96" type="text" class="form-control" placeholder="a96"><br>
+                                <input id="M9a96" type="text" class="form-control" placeholder="a96"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a97" type="text" class="form-control" placeholder="a97"><br>
+                                <input id="M9a97" type="text" class="form-control" placeholder="a97"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a98" type="text" class="form-control" placeholder="a98"><br>
+                                <input id="M9a98" type="text" class="form-control" placeholder="a98"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a99" type="text" class="form-control" placeholder="a99"><br>
+                                <input id="M9a99" type="text" class="form-control" placeholder="a99"><br>
                             </div>
                             =
                             <div class="col-md-1">
-                                <input id="t9" type="text" class="form-control" placeholder="TI"><br>
+                                <input id="M9t9" type="text" class="form-control" placeholder="TI"><br>
                             </div>
                         </div>
                     </div>
@@ -1503,10 +1514,12 @@
     <!-- Modal -->
 
     <div id="m10" class="modal fade bd-example-modal-lg" role="dialog">
-        <div class="modal-dialog "style="max-width: 100%; width: auto; display: table;" style="max-width: 100%; width: auto; display: table;">
+        <div class="modal-dialog " style="max-width: 100%; width: auto; display: table;"
+            style="max-width: 100%; width: auto; display: table;">
 
             <!-- Conteúdo do modal-->
             <div class="modal-content">
+                <p id="resultado"></p>
                 <!-- Cabeçalho do modal -->
                 <div class="modal-header">
                     <h4 class="modal-title">Matriz 10x10</h4>
@@ -1518,380 +1531,380 @@
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-1">
-                                <input id="a11" type="text" class="form-control" placeholder="a101"><br>
+                                <input id="M10a11" type="text" class="form-control" placeholder="a101"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a12" type="text" class="form-control" placeholder="a12"><br>
+                                <input id="M10a12" type="text" class="form-control" placeholder="a12"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a13" type="text" class="form-control" placeholder="a13"><br>
+                                <input id="M10a13" type="text" class="form-control" placeholder="a13"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a14" type="text" class="form-control" placeholder="a14"><br>
+                                <input id="M10a14" type="text" class="form-control" placeholder="a14"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a15" type="text" class="form-control" placeholder="a15"><br>
+                                <input id="M10a15" type="text" class="form-control" placeholder="a15"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a16" type="text" class="form-control" placeholder="a16"><br>
+                                <input id="M10a16" type="text" class="form-control" placeholder="a16"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a17" type="text" class="form-control" placeholder="a17"><br>
+                                <input id="M10a17" type="text" class="form-control" placeholder="a17"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a18" type="text" class="form-control" placeholder="a18"><br>
+                                <input id="M10a18" type="text" class="form-control" placeholder="a18"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a19" type="text" class="form-control" placeholder="a19"><br>
+                                <input id="M10a19" type="text" class="form-control" placeholder="a19"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a110" type="text" class="form-control" placeholder="a110"><br>
+                                <input id="M10a110" type="text" class="form-control" placeholder="a110"><br>
                             </div>
                             =
                             <div class="col-md-1">
-                                <input id="t1" type="text" class="form-control" placeholder="TI"><br>
+                                <input id="M10t1" type="text" class="form-control" placeholder="TI"><br>
                             </div>
                         </div>
                     </div>
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-1">
-                                <input id="a21" type="text" class="form-control" placeholder="a21"><br>
+                                <input id="M10a21" type="text" class="form-control" placeholder="a21"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a22" type="text" class="form-control" placeholder="a22"><br>
+                                <input id="M10a22" type="text" class="form-control" placeholder="a22"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a23" type="text" class="form-control" placeholder="a23"><br>
+                                <input id="M10a23" type="text" class="form-control" placeholder="a23"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a24" type="text" class="form-control" placeholder="a24"><br>
+                                <input id="M10a24" type="text" class="form-control" placeholder="a24"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a25" type="text" class="form-control" placeholder="a25"><br>
+                                <input id="M10a25" type="text" class="form-control" placeholder="a25"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a26" type="text" class="form-control" placeholder="a26"><br>
+                                <input id="M10a26" type="text" class="form-control" placeholder="a26"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a27" type="text" class="form-control" placeholder="a27"><br>
+                                <input id="M10a27" type="text" class="form-control" placeholder="a27"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a28" type="text" class="form-control" placeholder="a28"><br>
+                                <input id="M10a28" type="text" class="form-control" placeholder="a28"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a29" type="text" class="form-control" placeholder="a29"><br>
+                                <input id="M10a29" type="text" class="form-control" placeholder="a29"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a210" type="text" class="form-control" placeholder="a210"><br>
+                                <input id="M10a210" type="text" class="form-control" placeholder="a210"><br>
                             </div>
                             =
                             <div class="col-md-1">
-                                <input id="t2" type="text" class="form-control" placeholder="TI"><br>
+                                <input id="M10t2" type="text" class="form-control" placeholder="TI"><br>
                             </div>
                         </div>
                     </div>
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-1">
-                                <input id="a31" type="text" class="form-control" placeholder="a31"><br>
+                                <input id="M10a31" type="text" class="form-control" placeholder="a31"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a32" type="text" class="form-control" placeholder="a32"><br>
+                                <input id="M10a32" type="text" class="form-control" placeholder="a32"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a33" type="text" class="form-control" placeholder="a33"><br>
+                                <input id="M10a33" type="text" class="form-control" placeholder="a33"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a34" type="text" class="form-control" placeholder="a34"><br>
+                                <input id="M10a34" type="text" class="form-control" placeholder="a34"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a35" type="text" class="form-control" placeholder="a35"><br>
+                                <input id="M10a35" type="text" class="form-control" placeholder="a35"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a36" type="text" class="form-control" placeholder="a36"><br>
+                                <input id="M10a36" type="text" class="form-control" placeholder="a36"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a37" type="text" class="form-control" placeholder="a37"><br>
+                                <input id="M10a37" type="text" class="form-control" placeholder="a37"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a38" type="text" class="form-control" placeholder="a38"><br>
+                                <input id="M10a38" type="text" class="form-control" placeholder="a38"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a39" type="text" class="form-control" placeholder="a39"><br>
+                                <input id="M10a39" type="text" class="form-control" placeholder="a39"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a310" type="text" class="form-control" placeholder="a310"><br>
+                                <input id="M10a310" type="text" class="form-control" placeholder="a310"><br>
                             </div>
                             =
                             <div class="col-md-1">
-                                <input id="t3" type="text" class="form-control" placeholder="TI"><br>
+                                <input id="M10t3" type="text" class="form-control" placeholder="TI"><br>
                             </div>
                         </div>
                     </div>
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-1">
-                                <input id="a41" type="text" class="form-control" placeholder="a41"><br>
+                                <input id="M10a41" type="text" class="form-control" placeholder="a41"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a42" type="text" class="form-control" placeholder="a42"><br>
+                                <input id="M10a42" type="text" class="form-control" placeholder="a42"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a43" type="text" class="form-control" placeholder="a43"><br>
+                                <input id="M10a43" type="text" class="form-control" placeholder="a43"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a44" type="text" class="form-control" placeholder="a44"><br>
+                                <input id="M10a44" type="text" class="form-control" placeholder="a44"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a45" type="text" class="form-control" placeholder="a45"><br>
+                                <input id="M10a45" type="text" class="form-control" placeholder="a45"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a46" type="text" class="form-control" placeholder="a46"><br>
+                                <input id="M10a46" type="text" class="form-control" placeholder="a46"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a47" type="text" class="form-control" placeholder="a47"><br>
+                                <input id="M10a47" type="text" class="form-control" placeholder="a47"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a48" type="text" class="form-control" placeholder="a48"><br>
+                                <input id="M10a48" type="text" class="form-control" placeholder="a48"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a49" type="text" class="form-control" placeholder="a49"><br>
+                                <input id="M10a49" type="text" class="form-control" placeholder="a49"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a410" type="text" class="form-control" placeholder="a410"><br>
+                                <input id="M10a410" type="text" class="form-control" placeholder="a410"><br>
                             </div>
                             =
                             <div class="col-md-1">
-                                <input id="t4" type="text" class="form-control" placeholder="TI"><br>
+                                <input id="M10t4" type="text" class="form-control" placeholder="TI"><br>
                             </div>
                         </div>
                     </div>
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-1">
-                                <input id="a51" type="text" class="form-control" placeholder="a51"><br>
+                                <input id="M10a51" type="text" class="form-control" placeholder="a51"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a52" type="text" class="form-control" placeholder="a52"><br>
+                                <input id="M10a52" type="text" class="form-control" placeholder="a52"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a53" type="text" class="form-control" placeholder="a53"><br>
+                                <input id="M10a53" type="text" class="form-control" placeholder="a53"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a54" type="text" class="form-control" placeholder="a54"><br>
+                                <input id="M10a54" type="text" class="form-control" placeholder="a54"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a55" type="text" class="form-control" placeholder="a55"><br>
+                                <input id="M10a55" type="text" class="form-control" placeholder="a55"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a56" type="text" class="form-control" placeholder="a56"><br>
+                                <input id="M10a56" type="text" class="form-control" placeholder="a56"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a57" type="text" class="form-control" placeholder="a57"><br>
+                                <input id="M10a57" type="text" class="form-control" placeholder="a57"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a58" type="text" class="form-control" placeholder="a58"><br>
+                                <input id="M10a58" type="text" class="form-control" placeholder="a58"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a59" type="text" class="form-control" placeholder="a59"><br>
+                                <input id="M10a59" type="text" class="form-control" placeholder="a59"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a510" type="text" class="form-control" placeholder="a510"><br>
+                                <input id="M10a510" type="text" class="form-control" placeholder="a510"><br>
                             </div>
                             =
                             <div class="col-md-1">
-                                <input id="t5" type="text" class="form-control" placeholder="TI"><br>
+                                <input id="M10t5" type="text" class="form-control" placeholder="TI"><br>
                             </div>
                         </div>
                     </div>
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-1">
-                                <input id="a61" type="text" class="form-control" placeholder="a61"><br>
+                                <input id="M10a61" type="text" class="form-control" placeholder="a61"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a62" type="text" class="form-control" placeholder="a62"><br>
+                                <input id="M10a62" type="text" class="form-control" placeholder="a62"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a63" type="text" class="form-control" placeholder="a63"><br>
+                                <input id="M10a63" type="text" class="form-control" placeholder="a63"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a64" type="text" class="form-control" placeholder="a64"><br>
+                                <input id="M10a64" type="text" class="form-control" placeholder="a64"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a65" type="text" class="form-control" placeholder="a65"><br>
+                                <input id="M10a65" type="text" class="form-control" placeholder="a65"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a66" type="text" class="form-control" placeholder="a66"><br>
+                                <input id="M10a66" type="text" class="form-control" placeholder="a66"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a67" type="text" class="form-control" placeholder="a67"><br>
+                                <input id="M10a67" type="text" class="form-control" placeholder="a67"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a68" type="text" class="form-control" placeholder="a68"><br>
+                                <input id="M10a68" type="text" class="form-control" placeholder="a68"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a69" type="text" class="form-control" placeholder="a69"><br>
+                                <input id="M10a69" type="text" class="form-control" placeholder="a69"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a610" type="text" class="form-control" placeholder="a610"><br>
+                                <input id="M10a610" type="text" class="form-control" placeholder="a610"><br>
                             </div>
                             =
                             <div class="col-md-1">
-                                <input id="t6" type="text" class="form-control" placeholder="TI"><br>
+                                <input id="M10t6" type="text" class="form-control" placeholder="TI"><br>
                             </div>
                         </div>
                     </div>
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-1">
-                                <input id="a71" type="text" class="form-control" placeholder="a71"><br>
+                                <input id="M10a71" type="text" class="form-control" placeholder="a71"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a72" type="text" class="form-control" placeholder="a72"><br>
+                                <input id="M10a72" type="text" class="form-control" placeholder="a72"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a73" type="text" class="form-control" placeholder="a73"><br>
+                                <input id="M10a73" type="text" class="form-control" placeholder="a73"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a74" type="text" class="form-control" placeholder="a74"><br>
+                                <input id="M10a74" type="text" class="form-control" placeholder="a74"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a75" type="text" class="form-control" placeholder="a75"><br>
+                                <input id="M10a75" type="text" class="form-control" placeholder="a75"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a76" type="text" class="form-control" placeholder="a76"><br>
+                                <input id="M10a76" type="text" class="form-control" placeholder="a76"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a77" type="text" class="form-control" placeholder="a77"><br>
+                                <input id="M10a77" type="text" class="form-control" placeholder="a77"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a78" type="text" class="form-control" placeholder="a78"><br>
+                                <input id="M10a78" type="text" class="form-control" placeholder="a78"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a79" type="text" class="form-control" placeholder="a79"><br>
+                                <input id="M10a79" type="text" class="form-control" placeholder="a79"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a710" type="text" class="form-control" placeholder="a710"><br>
+                                <input id="M10a710" type="text" class="form-control" placeholder="a710"><br>
                             </div>
                             =
                             <div class="col-md-1">
-                                <input id="t7" type="text" class="form-control" placeholder="TI"><br>
+                                <input id="M10t7" type="text" class="form-control" placeholder="TI"><br>
                             </div>
                         </div>
                     </div>
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-1">
-                                <input id="a81" type="text" class="form-control" placeholder="a81"><br>
+                                <input id="M10a81" type="text" class="form-control" placeholder="a81"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a82" type="text" class="form-control" placeholder="a82"><br>
+                                <input id="M10a82" type="text" class="form-control" placeholder="a82"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a83" type="text" class="form-control" placeholder="a83"><br>
+                                <input id="M10a83" type="text" class="form-control" placeholder="a83"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a84" type="text" class="form-control" placeholder="a84"><br>
+                                <input id="M10a84" type="text" class="form-control" placeholder="a84"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a85" type="text" class="form-control" placeholder="a85"><br>
+                                <input id="M10a85" type="text" class="form-control" placeholder="a85"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a86" type="text" class="form-control" placeholder="a86"><br>
+                                <input id="M10a86" type="text" class="form-control" placeholder="a86"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a87" type="text" class="form-control" placeholder="a87"><br>
+                                <input id="M10a87" type="text" class="form-control" placeholder="a87"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a88" type="text" class="form-control" placeholder="a88"><br>
+                                <input id="M10a88" type="text" class="form-control" placeholder="a88"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a89" type="text" class="form-control" placeholder="a89"><br>
+                                <input id="M10a89" type="text" class="form-control" placeholder="a89"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a810" type="text" class="form-control" placeholder="a810"><br>
+                                <input id="M10a810" type="text" class="form-control" placeholder="a810"><br>
                             </div>
                             =
                             <div class="col-md-1">
-                                <input id="t8" type="text" class="form-control" placeholder="TI"><br>
+                                <input id="M10t8" type="text" class="form-control" placeholder="TI"><br>
                             </div>
                         </div>
                     </div>
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-1">
-                                <input id="a91" type="text" class="form-control" placeholder="a91"><br>
+                                <input id="M10a91" type="text" class="form-control" placeholder="a91"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a92" type="text" class="form-control" placeholder="a92"><br>
+                                <input id="M10a92" type="text" class="form-control" placeholder="a92"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a93" type="text" class="form-control" placeholder="a93"><br>
+                                <input id="M10a93" type="text" class="form-control" placeholder="a93"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a94" type="text" class="form-control" placeholder="a94"><br>
+                                <input id="M10a94" type="text" class="form-control" placeholder="a94"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a95" type="text" class="form-control" placeholder="a95"><br>
+                                <input id="M10a95" type="text" class="form-control" placeholder="a95"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a96" type="text" class="form-control" placeholder="a96"><br>
+                                <input id="M10a96" type="text" class="form-control" placeholder="a96"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a97" type="text" class="form-control" placeholder="a97"><br>
+                                <input id="M10a97" type="text" class="form-control" placeholder="a97"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a98" type="text" class="form-control" placeholder="a98"><br>
+                                <input id="M10a98" type="text" class="form-control" placeholder="a98"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a99" type="text" class="form-control" placeholder="a99"><br>
+                                <input id="M10a99" type="text" class="form-control" placeholder="a99"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a910" type="text" class="form-control" placeholder="a910"><br>
+                                <input id="M10a910" type="text" class="form-control" placeholder="a910"><br>
                             </div>
                             =
                             <div class="col-md-1">
-                                <input id="t9" type="text" class="form-control" placeholder="TI"><br>
+                                <input id="M10t9" type="text" class="form-control" placeholder="TI"><br>
                             </div>
                         </div>
                     </div>
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-1">
-                                <input id="a101" type="text" class="form-control" placeholder="a101"><br>
+                                <input id="M10a101" type="text" class="form-control" placeholder="a101"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a102" type="text" class="form-control" placeholder="a102"><br>
+                                <input id="M10a102" type="text" class="form-control" placeholder="a102"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a103" type="text" class="form-control" placeholder="a103"><br>
+                                <input id="M10a103" type="text" class="form-control" placeholder="a103"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a104" type="text" class="form-control" placeholder="a104"><br>
+                                <input id="M10a104" type="text" class="form-control" placeholder="a104"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a105" type="text" class="form-control" placeholder="a105"><br>
+                                <input id="M10a105" type="text" class="form-control" placeholder="a105"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a106" type="text" class="form-control" placeholder="a106"><br>
+                                <input id="M10a106" type="text" class="form-control" placeholder="a106"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a107" type="text" class="form-control" placeholder="a107"><br>
+                                <input id="M10a107" type="text" class="form-control" placeholder="a107"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a108" type="text" class="form-control" placeholder="a108"><br>
+                                <input id="M10a108" type="text" class="form-control" placeholder="a108"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a109" type="text" class="form-control" placeholder="a109"><br>
+                                <input id="M10a109" type="text" class="form-control" placeholder="a109"><br>
                             </div>
                             <div class="col-md-1">
-                                <input id="a1010" type="text" class="form-control" placeholder="a1010"><br>
+                                <input id="M10a1010" type="text" class="form-control" placeholder="a1010"><br>
                             </div>
                             =
                             <div class="col-md-1">
-                                <input id="t10" type="text" class="form-control" placeholder="TI"><br>
+                                <input id="M10t10" type="text" class="form-control" placeholder="TI"><br>
                             </div>
                         </div>
                     </div>
