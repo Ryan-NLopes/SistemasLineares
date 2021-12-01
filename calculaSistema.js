@@ -77,22 +77,59 @@ Forma do sistema (matricial): Ax = b
         }
         X[i] = X[i] / A[i][i];
     }
+    
     console.log(X);
+
     //Removendo casas depois da vírgula e formatando saídas
-    icognitas = ["X", "Y", "Z", "W", "U", "S", "V", "K", "M", "N"];
+    icognitas = ["X", "Y", "Z", "T", "U", "W", "V", "K", "M", "N"];
     let H=0; 
+    let validation = true;
+      
     for(let v=0; v < X.length; v++) {
         H = X[v];
-        if(H % 1 === 0) {
-            H = H.toFixed(0);
-            X[v] = icognitas[v] + " = " + H.toString();
-        } else {
-            H = H.toFixed(2);
-            X[v] = icognitas[v] + " = " + H.toString();
-        }
+        if(typeof(H) === "undefined" || typeof(H) === "null" || isNaN(H)) {
+            document.getElementById("ExibirResultado").innerHTML = "SISTEMA IMPOSSÍVEL OU INDERTERMINADO!!!";
+            document.getElementById("ExibirResultado3").innerHTML = "SISTEMA IMPOSSÍVEL OU INDERTERMINADO!!!";
+            document.getElementById("ExibirResultado4").innerHTML = "SISTEMA IMPOSSÍVEL OU INDERTERMINADO!!!";
+            document.getElementById("ExibirResultado5").innerHTML = "SISTEMA IMPOSSÍVEL OU INDERTERMINADO!!!";
+            document.getElementById("ExibirResultado6").innerHTML = "SISTEMA IMPOSSÍVEL OU INDERTERMINADO!!!";
+            document.getElementById("ExibirResultado7").innerHTML = "SISTEMA IMPOSSÍVEL OU INDERTERMINADO!!!";
+            document.getElementById("ExibirResultado8").innerHTML = "SISTEMA IMPOSSÍVEL OU INDERTERMINADO!!!";
+            document.getElementById("ExibirResultado9").innerHTML = "SISTEMA IMPOSSÍVEL OU INDERTERMINADO!!!";
+            document.getElementById("ExibirResultado10").innerHTML = "SISTEMA IMPOSSÍVEL OU INDERTERMINADO!!!";
+            validation = false;
+            break;
+        } 
     }
 
-    $("#resultado").html("<div class='alert alert-success' role='alert'>Resultado: "+X+"</div>");
-    alert(X);
-    //return X;
+    var I=0;
+    for(let v=0; v < X.length; v++) {
+        H = X[v];
+        I = X[v];
+        H = H.toFixed(5);
+        
+        console.log(H);
+        if(validation) {
+            if(H % 1 === 0) {
+                H = Math.round(H, 0);
+                X[v] = icognitas[v] + " = " + H.toString();
+            } 
+            else {
+                I = I.toFixed(2);
+                X[v] = icognitas[v] + " = " + I.toString();
+            }
+        }
+    }
+    if(validation) {
+        document.getElementById("ExibirResultado").innerHTML = X;
+        document.getElementById("ExibirResultado3").innerHTML = X;
+        document.getElementById("ExibirResultado4").innerHTML = X;
+        document.getElementById("ExibirResultado5").innerHTML = X;
+        document.getElementById("ExibirResultado6").innerHTML = X;
+        document.getElementById("ExibirResultado7").innerHTML = X;
+        document.getElementById("ExibirResultado8").innerHTML = X;
+        document.getElementById("ExibirResultado9").innerHTML = X;
+        document.getElementById("ExibirResultado10").innerHTML = X;
+    }
+    
 }
